@@ -1,0 +1,1 @@
+{"arguments": "3", "variables": "('i', 'j')", "functionName": "generateMatrix", "arrayName": "A", "speed": 302, "code": "def generateMatrix(n):\n    A = [[0] * n for _ in range(n)]\n    i, j, di, dj = 0, 0, 0, 1\n    for k in range(n*n):\n        A[i][j] = k + 1\n        if A[(i+di)%n][(j+dj)%n]:\n            di, dj = dj, -di\n        i += di\n        j += dj\n    return A\n"}
